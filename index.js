@@ -2,39 +2,31 @@ const length = 3.281
 const volume = 0.264
 const mass = 2.204
 
-let lengthEl = document.getElementById("length-el") 
-let volumeEl = document.getElementById("volume-el")
-let massEl = document.getElementById("mass-el")
-let convertBtn = document.getElementById("convert-btn")
+const lengthEl = document.getElementById("length-el") 
+const volumeEl = document.getElementById("volume-el")
+const massEl = document.getElementById("mass-el")
+const convertBtn = document.getElementById("convert-btn")
 
-lengthConversion(1)
-volumeConversion(1)
-massConversion(1)
+conversion(1, length)
+conversion(1, volume)
+conversion(1, mass)
 
 convertBtn.addEventListener("click", function() {
-    let chosenAmountInpt = document.getElementById("chosen-amount-inpt").value
-    lengthConversion(chosenAmountInpt)
-    volumeConversion(chosenAmountInpt)
-    massConversion(chosenAmountInpt)
+    const chosenAmountInpt = document.getElementById("chosen-amount-inpt").value
+    conversion(chosenAmountInpt, length)
+    conversion(chosenAmountInpt, volume)
+    conversion(chosenAmountInpt, mass)
 })
 
-function lengthConversion(i) {
-    const metricToImperial = (i * length).toFixed(3)
-    const imperialToMetric = (i / length).toFixed(3)
-    
-    return lengthEl.textContent = `${i} meters = ${metricToImperial} feet | ${i} feet = ${imperialToMetric} meters`
-}
+function conversion(userInput, unit) {
+    const metricToImperial = (userInput * unit).toFixed(3)
+    const imperialToMetric = (userInput / unit).toFixed(3)
 
-function volumeConversion(i) {
-    const metricToImperial = (i * volume).toFixed(3)
-    const imperialToMetric = (i / volume).toFixed(3)
-    
-    return volumeEl.textContent = `${i} liters = ${metricToImperial} gallons | ${i} gallons = ${imperialToMetric} liters`
-}
-
-function massConversion(i) {
-    const metricToImperial = (i * mass).toFixed(3)
-    const imperialToMetric = (i / mass).toFixed(3)
-    
-    return massEl.textContent = `${i} kilos = ${metricToImperial} pounds | ${i} pounds = ${imperialToMetric} kilos`
+    if (unit === length) {
+        return lengthEl.textContent = `${userInput} meters = ${metricToImperial} feet | ${userInput} feet = ${imperialToMetric} meters`
+    } else if ( unit === volume ) {
+        return volumeEl.textContent = `${userInput} liters = ${metricToImperial} gallons | ${userInput} gallons = ${imperialToMetric} liters`
+    } else if ( unit === mass) {
+        return massEl.textContent = `${userInput} kilos = ${metricToImperial} pounds | ${userInput} pounds = ${imperialToMetric} kilos`
+    }
 }
