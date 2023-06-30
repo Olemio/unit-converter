@@ -12,10 +12,11 @@ conversion(1, volume)
 conversion(1, mass)
 
 convertBtn.addEventListener("click", function() {
-    const chosenAmountInpt = document.getElementById("chosen-amount-inpt").value
-    conversion(chosenAmountInpt, length)
-    conversion(chosenAmountInpt, volume)
-    conversion(chosenAmountInpt, mass)
+    const AmountInputV = document.getElementById("amount-input").value
+
+    conversion(AmountInputV, length)
+    conversion(AmountInputV, volume)
+    conversion(AmountInputV, mass)
 })
 
 function conversion(userInput, unit) {
