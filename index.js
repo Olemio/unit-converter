@@ -5,9 +5,7 @@ const mass = 2.204
 let lengthEl = document.getElementById("length-el") 
 let volumeEl = document.getElementById("volume-el")
 let massEl = document.getElementById("mass-el")
-
 let convertBtn = document.getElementById("convert-btn")
-
 
 lengthConversion(1)
 volumeConversion(1)
@@ -19,8 +17,6 @@ convertBtn.addEventListener("click", function() {
     volumeConversion(chosenAmountInpt)
     massConversion(chosenAmountInpt)
 })
-
-
 
 function lengthConversion(i) {
     const metricToImperial = (i * length).toFixed(3)
