@@ -7,16 +7,18 @@ const volumeEl = document.getElementById("volume-el")
 const massEl = document.getElementById("mass-el")
 const convertBtn = document.getElementById("convert-btn")
 
+document.getElementById("amount-input").value = 1
+
 conversion(1, length)
 conversion(1, volume)
 conversion(1, mass)
 
 convertBtn.addEventListener("click", function() {
-    const AmountInputV = document.getElementById("amount-input").value
+    unitAmount = document.getElementById("amount-input").value
 
-    conversion(AmountInputV, length)
-    conversion(AmountInputV, volume)
-    conversion(AmountInputV, mass)
+    conversion(unitAmount, length)
+    conversion(unitAmount, volume)
+    conversion(unitAmount, mass)
 })
 
 function conversion(userInput, unit) {
