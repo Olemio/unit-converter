@@ -5,6 +5,10 @@
     color: white;
 }
 
+body {
+    background-color: #1F2937;
+}
+
 header {
     background-color: #6943FF;
     display: flex;
@@ -15,6 +19,10 @@ header {
 
 #title {
     margin: 33px;
+}
+
+::placeholder {
+    color: white;
 }
 
 input {
@@ -42,12 +50,10 @@ button {
 }
 
 main {
-    background-color: #1F2937;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 24px;
-    height: 1200px;
 }
 
 h1 {
